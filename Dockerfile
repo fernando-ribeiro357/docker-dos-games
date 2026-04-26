@@ -10,12 +10,12 @@ RUN npm install -g serve
 
 FROM jsdos AS game
 
-ARG GAME_URL
+ARG GAME_URL="https://www.dosgames.com/files/tetrisqueen.zip"
 RUN curl -k -o game.zip "$GAME_URL"
 
 FROM game AS web
 
-ARG GAME_ARGS
+ARG GAME_ARGS=\"QTETRIS.EXE\"
 COPY index.html bg.jpg ./
 RUN sed -i s/GAME_ARGS/$GAME_ARGS/ index.html
 
