@@ -1,0 +1,11 @@
+services:
+  docker-dos-games:
+    build:
+      context: .
+      args:
+        - GAME_TAG=tetrisqueen
+        - GAME_URL=https://www.dosgames.com/files/tetrisqueen.zip
+        
+        - GAME_ARGS=\"QTETRIS.EXE\"
+    ports:
+      - 8000:8000
