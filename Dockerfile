@@ -19,4 +19,6 @@ ARG GAME_ARGS=\"QTETRIS.EXE\"
 COPY index.html bg.jpg ./
 RUN sed -i s/GAME_ARGS/$GAME_ARGS/ index.html
 
+EXPOSE 8000
+
 ENTRYPOINT ["npx", "serve", "-l", "tcp://0.0.0.0:8000"]
