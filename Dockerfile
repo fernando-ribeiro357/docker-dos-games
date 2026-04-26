@@ -10,7 +10,7 @@ RUN npm install -g serve
 
 FROM jsdos AS game
 
-RUN curl -k -o game.zip "https://www.dosgames.com/files/GALAG101.ZIP"
+RUN curl -k -o game.zip https://www.dosgames.com/files/GALAG101.ZIP
 
 FROM game AS web
 
